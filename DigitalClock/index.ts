@@ -43,9 +43,6 @@ function updateDate(): void{
 function initialize(): void{
     updateClock();
     updateDate();
-
-    setInterval(updateClock, 1000);
-    setInterval(updateDate, 86400000);
 }
 
-initialize();
+setInterval(initialize,1000);
