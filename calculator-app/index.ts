@@ -5,7 +5,7 @@ btn.forEach((button) => {
     button.addEventListener('click', () => {
         if(result){
             console.log(`Button clicked: ${button.textContent}`);
-            result.textContent = button.textContent;
+            result.textContent = result?.textContent + button?.textContent;
         }
     });
 });
