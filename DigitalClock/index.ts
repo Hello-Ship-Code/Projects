@@ -45,4 +45,5 @@ function initialize(): void{
     updateDate();
 }
 
+// calls every second
 setInterval(initialize,1000);
