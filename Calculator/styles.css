@@ -1,0 +1,92 @@
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: #ffffff;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-align: center;
+            color: #ffcc00;
+        }
+
+        #calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #2b2b3c;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #result-container {
+            grid-column: span 4;
+            display: flex;
+            flex-direction: column;
+            background-color: #333344;
+            border: 1px solid #444455;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        #input {
+            height: 50px;
+            border: none;
+            background: transparent;
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            outline: none;
+        }
+
+        #result {
+            height: 50px;
+            border: none;
+            background: transparent;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            resize: none;
+            outline: none;
+        }
+
+        button {
+            height: 60px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4a4a5e;
+            color: #ffffff;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #62627a;
+        }
+
+        #0 {
+            grid-column: span 2;
+        }
+
+        #equal {
+            grid-column: span 2;
+            background-color: #28a745;
+        }
+
+        #equal:hover {
+            background-color: #1e7e34;
+        }
+
+        #input:focus, #result:focus {
+            border-bottom: 2px solid #ffcc00;
+        }
