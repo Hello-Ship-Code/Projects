@@ -15,6 +15,7 @@ btn.forEach((button) => {
         if (button.textContent === "clear" && input && result) {
             input.textContent = "";
             result.textContent = "";
+            output = "";
         }
     });
 });

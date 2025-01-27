@@ -19,6 +19,7 @@ btn.forEach((button) => {
         {
             input.textContent = "";
             result.textContent = "";
+            output ="";
         }
     });
 }
