@@ -1,1 +1,3 @@
-console.log("Hello from guess the number")
+const btn = document.querySelector('button') as HTMLButtonElement | null;
+
+btn?.addEventListener('click', () => console.log("test"));

@@ -9,20 +9,22 @@ body, h1, input, button {
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    /* background: linear-gradient(135deg, #fbc2eb, #a18cd1); */
+    background: rgb(63,94,251);
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #fff;
+    color: #333;
 }
 
 #container {
-    background: #ffffff10;
-    backdrop-filter: blur(10px);
+    background: #ffffffd9;
+    backdrop-filter: blur(15px);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 300px;
 }
@@ -30,14 +32,16 @@ body {
 h1 {
     font-size: 1.8rem;
     margin-bottom: 20px;
+    color: #4a4a4a;
 }
 
 #result {
     font-size: 1rem;
     margin-bottom: 20px;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(161, 140, 209, 0.2);
     border-radius: 8px;
+    color: #4a4a4a;
     display: none; /* Initially hidden */
 }
 
@@ -45,17 +49,17 @@ input[type="text"] {
     width: 100%;
     padding: 10px;
     font-size: 1rem;
-    border: none;
+    border: 1px solid #a18cd1;
     border-radius: 8px;
     outline: none;
     margin-bottom: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    background: rgba(251, 194, 235, 0.1);
+    color: #4a4a4a;
     text-align: center;
 }
 
 input[type="text"]::placeholder {
-    color: #d9d9d9;
+    color: #a18cd1;
 }
 
 button {
@@ -64,7 +68,7 @@ button {
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
-    background: #2575fc;
+    background: #a18cd1;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -72,5 +76,5 @@ button {
 }
 
 button:hover {
-    background: #6a11cb;
+    background: #fbc2eb;
 }
