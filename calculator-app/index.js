@@ -10,7 +10,7 @@ btn.forEach((button) => {
             input.textContent = output;
         }
         if (button.textContent === "=" && result && input) {
-            result.textContent = (eval(output));
+            result.textContent = eval(output);
         }
         if (button.textContent === "clear" && input && result) {
             input.textContent = "";
