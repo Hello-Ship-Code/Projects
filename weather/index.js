@@ -28,6 +28,7 @@ button.addEventListener("click", () => __awaiter(void 0, void 0, void 0, functio
         }
         const data = yield response.json();
         display.style.display = 'block';
+        userInput.value = "";
         display.textContent = `🌤 Weather in ${data.location.name}: ${data.current.temp_c}°C, ${data.current.condition.text}`;
     }
     catch (error) {
