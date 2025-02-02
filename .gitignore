@@ -46,7 +46,3 @@ bin/
 *.exe
 *.out
 *.test
-
-# Ignore compiled TypeScript files (if needed)
-*.js
-*.d.ts
