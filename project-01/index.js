@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
-const PORT = 2010;
+const PORT = 3000;
 const users = require('./MOCK_DATA.json');
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
