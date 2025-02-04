@@ -2,7 +2,6 @@ const btn = document.querySelectorAll('button') as NodeListOf<HTMLButtonElement>
 const input = document.getElementById('input') as HTMLButtonElement | null;
 const result = document.getElementById('result') as HTMLButtonElement | null;
 
-
 let output = "";
 btn.forEach((button) => {
     button.addEventListener('click',
