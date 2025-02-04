@@ -1,4 +1,4 @@
-import { connect } from './connection.js'
+import { connect } from './connection'
 import express from 'express';
 import { useRouter } from './routes/user';
 

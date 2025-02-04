@@ -27,14 +27,14 @@ const getUserById = async (req, res) => {
 };
 
 const postUser = async (req, res) => {
-    const { first_name, last_name, email, gender, job_title } = req.body;
+    const { firstName, lastName, email, gender, jobTitle } = req.body;
 
-    if (!first_name || !last_name || !email || !gender || !job_title) {
+    if (!firstName || !lastName || !email || !gender || !jobTitle) {
         return res.status(400).json({ status: "error", message: "All fields are required" });
     }
 
     try {
-        const newUser = await User.create({ first_name, last_name, email, gender, job_title });
+        const newUser = await User.create({ firstName, lastName, email, gender, jobTitle });
         return res.status(201).json({ status: "success", message: "User created successfully", data: newUser._id });
     } catch (error) {
         console.error("Error creating user:", error);
@@ -75,8 +75,8 @@ const deleteUserById = async (req, res) => {
 export { handleAllUsers, getUserById, postUser, putUserById, patchUserById, deleteUserById };
 
 // const validateUserFields = (req, res, next) => {
-//     const { first_name, last_name, email, gender, job_title } = req.body;
-//     if (!first_name || !last_name || !email || !gender || !job_title) {
+//     const { firstName, lastName, email, gender, jobTitle } = req.body;
+//     if (!firstName || !lastName || !email || !gender || !jobTitle) {
 //         return res.status(400).json({ status: "error", message: "All fields are required" });
 //     }
 //     next();
