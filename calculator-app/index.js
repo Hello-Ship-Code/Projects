@@ -3,7 +3,7 @@ const btn = document.querySelectorAll('button');
 const input = document.getElementById('input');
 const result = document.getElementById('result');
 let output = "";
-btn.forEach((button) => {
+btn.forEach((button) => { 
     button.addEventListener('click', () => {
         if (input && button.textContent !== "=") {
             output += (button.textContent);
