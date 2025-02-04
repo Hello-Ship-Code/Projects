@@ -2,7 +2,7 @@ import { user } from '../models/user';
 import { Request, Response } from 'express';
 
 // Define the response data structure
-interface ResponseData<T> {
+type ResponseData<T> = {
     status: string;
     message?: string;
     data?: T;
