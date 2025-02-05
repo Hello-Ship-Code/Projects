@@ -6,7 +6,7 @@ This repository contains all of my projects, including frontend, backend, and ex
 
 - **`project-js/`** → JavaScript-based projects.  
 - **`backend-projects/`** → Node.js, Express, and MongoDB projects.  
-- **`future-projects/`** → Placeholder for upcoming projects.  
+- **`frontend-projects/`** → Placeholder for upcoming projects.  
 
 ## 🛠️ Setup  
 
