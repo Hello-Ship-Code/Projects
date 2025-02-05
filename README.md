@@ -4,9 +4,11 @@ This repository contains all of my projects, including frontend, backend, and ex
 
 ## 📂 Project Structure  
 
-- **`project-js/`** → JavaScript-based projects.  
+- **`frontend-projects/`** → JavaScript-based and frontend projects.  
+  - **`project-js/`** → Vanilla JavaScript projects.  
+  - **`react-projects/`** → React-based projects (if applicable).  
 - **`backend-projects/`** → Node.js, Express, and MongoDB projects.  
-- **`frontend-projects/`** → Placeholder for upcoming projects.  
+<!-- - **`future-projects/`** → Placeholder for upcoming projects.   -->
 
 ## 🛠️ Setup  
 
@@ -14,4 +16,3 @@ For projects with dependencies, navigate to the project folder and run:
 
 ```sh
 npm install
-```
