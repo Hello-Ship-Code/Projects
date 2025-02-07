@@ -1,7 +1,3 @@
-Here's the corrected version with a more descriptive folder name for your Node.js TypeScript projects:
-
----
-
 # 🚀 Projects Repository
 
 This repository contains all of my projects, including frontend, backend, and experimental applications. Each project is organized into its respective folder for easy navigation and scalability.
