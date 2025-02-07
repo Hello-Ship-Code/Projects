@@ -8,7 +8,7 @@ type TypeHandler = RequestHandler<{shortId: string},{
   message: string;
   Data?: object ;
   totalClicks?:  number
-}, unknown>
+}, never, never>
 
 type PostUrlHandler = RequestHandler<never,{
 status: string;
@@ -16,7 +16,7 @@ message: string;
 Data?: object;
 },{
   url: string
-}>
+}, never>
 
 export const postUrl: PostUrlHandler = async(req, res) =>{
   const { url } = req.body
