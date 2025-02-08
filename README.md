@@ -5,7 +5,7 @@ This repository contains all of my projects, including frontend, backend, and ex
 ## 📂 Project Structure
 
 - **`frontend-projects/`** → JavaScript-based and frontend projects.
-  - **`project-js/`** → Vanilla JavaScript projects.
+  - **`vanilla-js/`** → Vanilla JavaScript projects.
   - **`react-projects/`** → React-based projects (if applicable).
 - **`backend-projects/`** → Node.js, Express, and MongoDB projects.
   - **`node-ts/`** → Node.js projects with TypeScript.
