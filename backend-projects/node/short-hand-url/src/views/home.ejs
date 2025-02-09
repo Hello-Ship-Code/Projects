@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>short hand url</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+</head>
+<body>
+    <h1>Short hand url</h1>
+    <table>
+        <% if( url && url.length > 0){ %>
+            <% url.forEach(element => { %>
+                <tr>
+                    <th>Short ID</th>
+                    <th>Redirect URL</th>
+                    <th>Number of Visits</th>
+                </tr>
+                <% if(element) %>
+                <tr>
+                    <td> <a href= "/url/<%= element.shortID%>">  <%= element.shortID %></a></td>
+                    <td> <a href= "<%= element.redirectUrl %>"><%= element.redirectUrl %></a></td>
+                    <td><%= element.visitHistory ? element.visitHistory.length : 0 %></td>
+                </tr>
+            <% }); %>
+        <%} else { %>
+            <p>no url's found</p>
+            <% } %>
+    </table>
+</body>
+</html>

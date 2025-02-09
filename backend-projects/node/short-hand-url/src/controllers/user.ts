@@ -10,8 +10,6 @@ type TypeHandler = RequestHandler<{ shortId: string }, {
   totalClicks?: number
 }, never, never>
 
-// testing
-
 type PostUrlHandler = RequestHandler<never, {
   status: string;
   message: string;
@@ -35,14 +33,21 @@ export const postUrl: PostUrlHandler = async (req, res) => {
 }
 
 export const getAllData: TypeHandler = async (_req, res): Promise<void> => {
-  const result = await Url.find({});
-  if (!result) {
-    res.json({ status: "error", message: "no users found" })
-    // return
-  }
-  res.status(200).json({ status: "success", message: "test", Data: result })
+  try {
+    const result = await Url.find({});
 
-}
+    if (!result || result.length === 0) {
+      res.status(404).json({ status: "error", message: "No URLs found" });
+      return
+    }
+    res.render('home', { url: result });
+    // res.json({ status: "success", message: "data working", Data: result })
+
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    res.status(500).json({ status: "error", message: "Server error" });
+  }
+};
 
 export const getUrlByID: TypeHandler = async (req, res) => {
   try {
