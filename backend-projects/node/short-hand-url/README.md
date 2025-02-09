@@ -1,42 +1,66 @@
-## Template Repository 🚀  
+# Short Hand URL
 
-This is a **template repository** designed for quick and efficient project setup. It includes a pre-configured **TypeScript + Node.js** environment, allowing you to start coding immediately without repetitive setup tasks.  
+## 🚀 Overview
 
-### 🛠 Features  
-- **TypeScript + Node.js** setup  
-- **Pre-configured `tsconfig.json`** with sensible defaults  
-- **ESLint & Prettier** for consistent code formatting (optional)  
-- **Pre-configured `package.json`** for easy dependency management  
+Short-Hand-URL is a URL shortening service built with **Node.js**, **Express**, and **MongoDB**. It allows users to shorten URLs, track visits, and analyze usage.
 
-### 🚀 Getting Started  
+## 🛠 Features
 
-#### 1️⃣ Clone the Repository  
-```sh
-git clone https://github.com/your-username/template-repo.git my-project
-cd my-project
+- ✨ Generate short URLs
+- 🔄 Redirect short URLs to original links
+- 📊 Track visit history
+- ⚡ Fast and efficient API
+
+## 📂 Project Structure
+
+```
+short-hand-url/
+│-- src/
+│   ├── controllers/
+│   │   ├── user.js
+│   ├── models/
+│   │   ├── user.js
+│   ├── routes/
+│   │   ├── router.js
+│   ├── views/
+│   │   ├── home.ejs
+│   ├── env.config.js
+│   ├── app.js
+│-- dist/ (compiled output)
+│-- .env
+│-- package.json
+│-- README.md
 ```
 
-#### 2️⃣ Install Dependencies  
-```sh
-npm install
-```
+## 🏗 Installation
 
-#### 3️⃣ Run the Project  
-```sh
-npx ts-node src/index.ts
-```
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Hello-Ship-Code/Projects.git
+   cd short-hand-url
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Set up the environment variables in `.env`:
+   ```env
+   DATABASE_URL=mongodb://localhost:27017/short-hand-url
+   PORT=8000
+   NODE_ENV=development
+   ```
+4. Start the server:
+   ```sh
+   npm start
+   ```
 
-### 📂 Folder Structure  
-```
-my-project
-│── src
-│   ├── index.ts  # Entry point
-│── package.json
-│── tsconfig.json
-│── .gitignore
-```
+## 🔗 Usage
 
-### 📜 License  
-This project is licensed under the **MIT License**.  
+- **Shorten a URL**: Send a `POST` request to `/url` with `{ "url": "https://example.com" }`.
+- **Get all URLs**: Visit `http://localhost:8000/url`
+- **Redirect a short URL**: Visit `http://localhost:8000/url/:shortId`
+- **Analytics**: Fetch visit count with `GET /url/analytics/:shortId`
 
-Lets get started!!! 🚀
+## 📜 License
+
+This project is licensed under the MIT License.
