@@ -1,4 +1,4 @@
-import express, { urlencoded } from 'express';
+import express from 'express';
 import mongoose from 'mongoose';
 import path from 'path';
 
@@ -12,11 +12,10 @@ app.set('view engine', 'ejs');
 const viewsPath = path.join(__dirname, '..', 'src', 'views'); // ✅ Correct path
 
 app.set('views', viewsPath);
-console.log('Views directory:', viewsPath);
 
 app.use(express.json());
-app.use(urlencoded({ extended: false }))
-
+app.use(express.urlencoded({ extended: true }))
+app.use(express.static(path.join(__dirname, "public")));
 app.use('/url', useRouter);
 
 // Database Connection

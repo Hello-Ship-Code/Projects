@@ -15,20 +15,30 @@ type PostUrlHandler = RequestHandler<never, {
   message: string;
   Data?: object;
 }, {
-  url: string
+  redirectUrl: string
 }, never>
 
 export const postUrl: PostUrlHandler = async (req, res) => {
-  const { url } = req.body
-  const shortID = shortid();
+  const { redirectUrl } = req.body;
+  console.log(redirectUrl)
+  if (!redirectUrl) {
+    res.status(400).json({ status: "error", message: "URL is required" });
+    return
+  }
 
-  const entry = await Url.create({
+  const shortID = shortid.generate();
+
+  await Url.create({
     shortID,
-    redirectUrl: url,
-    visitedHistory: []
-  })
+    redirectUrl, // Make sure this matches the Mongoose model
+    visitedHistory: [],
+  });
 
-  res.json({ status: "success", message: "message sent to DataBase", Data: entry })
+  // ✅ Fetch all stored URLs
+  const allUrls = await Url.find({});
+
+  // ✅ Pass allUrls to the template (instead of `redirectUrl`)
+  res.render('home', { redirectUrl: allUrls });
 
 }
 
@@ -37,10 +47,10 @@ export const getAllData: TypeHandler = async (_req, res): Promise<void> => {
     const result = await Url.find({});
 
     if (!result || result.length === 0) {
-      res.status(404).json({ status: "error", message: "No URLs found" });
+      res.render('home', { message: "error" })
       return
     }
-    res.render('home', { url: result });
+    res.render('home', { redirectUrl: result });
     // res.json({ status: "success", message: "data working", Data: result })
 
   } catch (error) {
@@ -69,7 +79,7 @@ export const getUrlByID: TypeHandler = async (req, res) => {
   }
 }
 
-const getAnalyticsById: TypeHandler = async (req, res) => {
+export const getAnalyticsById: TypeHandler = async (req, res) => {
   try {
     const shortID = req.params.shortId
     const result = await Url.findOne({ shortID })
@@ -84,5 +94,3 @@ const getAnalyticsById: TypeHandler = async (req, res) => {
     res.json({ status: "error", message: "server issue" })
   }
 }
-
-export { getAnalyticsById }
