@@ -1,11 +1,10 @@
 import { Router } from 'express'
 
-import { getAnalyticsById,getUrlByID, getAllData, postUrl } from '../controllers/user'
+import { basicGet } from '../controllers/users/get-url'
+import { postUrl } from '../controllers/users/post-url'
 
 const useRouter = Router()
 
-useRouter.route('/').post(postUrl).get(getAllData)
-useRouter.route('/analytics/:shortId').get(getAnalyticsById)
-useRouter.route('/:shortId').get(getUrlByID)
+useRouter.route('/').get(basicGet).post(postUrl)
 
 export { useRouter }

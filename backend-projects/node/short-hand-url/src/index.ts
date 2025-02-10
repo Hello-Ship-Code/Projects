@@ -1,28 +1,22 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import path from 'path';
+import express from 'express'
+import { connect } from 'mongoose'
 
-import { env } from './env.config';
+import { env } from "./env.config"
+import { errorHandler } from './handler/error.handler'
 
-import { useRouter } from './routes/router';
+import { useRouter } from './routes/router'
 
-const app = express();
+const app = express()
 
-app.set('view engine', 'ejs');
-const viewsPath = path.join(__dirname, '..', 'src', 'views'); // ✅ Correct path
-
-app.set('views', viewsPath);
-
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
-app.use(express.static(path.join(__dirname, "public")));
-app.use('/url', useRouter);
+app.use(express.json())
+
+app.use('/url', useRouter)
+
+app.use(errorHandler)
 
 // Database Connection
-mongoose
-  .connect(env.DATABASE_URL)
-  .then(() => console.log('Connected to Database...'))
-  .catch((err) => console.error('Database connection error:', err));
+connect(env.DATABASE_URL).then(() => console.log(`connected to DataBase...`))
 
 // Server
-app.listen(env.PORT, () => console.log(`Server is running on port ${env.PORT}`));
+app.listen(env.PORT, () => console.log(`Server is running on port ${env.PORT}`))

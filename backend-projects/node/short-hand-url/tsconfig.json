@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "outDir": "dist",
+    "rootDir": "src",
     "target": "ESNext",
     "module": "CommonJS",
     "moduleResolution": "Node",
@@ -23,6 +23,6 @@
     "skipLibCheck": true,
     "types": ["node"]
   },
-  "include": ["src"],
+  "include": ["src", "config", "src/env.config.ts", "env.config.js", "eslint.config.mjs"],
   "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
 }
