@@ -23,7 +23,6 @@
     "eslint-plugin-prettier": "^5.2.3",
     "express": "^4.21.2",
     "globals": "^15.14.0",
-    "moongoose": "^0.0.5",
     "prettier": "^3.4.2",
     "typescript-eslint": "^8.23.0"
   }
