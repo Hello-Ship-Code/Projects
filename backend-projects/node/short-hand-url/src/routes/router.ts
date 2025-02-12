@@ -1,10 +1,13 @@
-import { Router } from 'express'
+import { Router } from "express";
 
-import { basicGet } from '../controllers/users/get-url'
-import { postUrl } from '../controllers/users/post-url'
+import { getAllUrl } from "../controllers/urls/get-url";
+import { postUrl } from "../controllers/urls/post-url";
+import { getUrlById } from "../controllers/urls/analytics-url";
 
-const useRouter = Router()
+const useRouter = Router();
 
-useRouter.route('/').get(basicGet).post(postUrl)
+useRouter.route("/").post(postUrl).get(getAllUrl)
 
-export { useRouter }
+useRouter.route('/:shortId').get(getUrlById)
+
+export { useRouter };
